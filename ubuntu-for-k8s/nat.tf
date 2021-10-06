@@ -7,7 +7,7 @@ resource "sbercloud_vpc_eip" "nat_eip" {
     type = "5_bgp"
   }
   bandwidth {
-    name = "eip-for-${var.natName}"
+    name = "${var.prefix}-eip-for-${var.natName}"
     size = 5
     share_type = "PER"
     charge_mode = "bandwidth"
@@ -15,7 +15,7 @@ resource "sbercloud_vpc_eip" "nat_eip" {
 }
 
 resource "sbercloud_nat_gateway" "nat_01" {
-  name = var.natName
+  name = "${var.prefix}-${var.natName}"
   description = "NAT Gateway"
   spec = "1"
   vpc_id = sbercloud_vpc.vpc_01.id

@@ -27,7 +27,7 @@ data "sbercloud_images_image" "ubuntu_image" {
 resource "sbercloud_compute_instance" "ecs_01" {
   count = var.workerNodesCount
 
-  name = "ecs-worker-${count.index}"
+  name = "${var.prefix}-ecs-worker-${count.index}"
   image_id = data.sbercloud_images_image.ubuntu_image.id
   flavor_id = var.workerFlavour
   security_groups = [sbercloud_networking_secgroup.sg_01.name]
@@ -46,7 +46,7 @@ resource "sbercloud_compute_instance" "ecs_01" {
 }
 
 resource "sbercloud_compute_instance" "ecs_master" {
-  name = "ecs-master"
+  name = "${var.prefix}-ecs-master"
   image_id = data.sbercloud_images_image.ubuntu_image.id
   flavor_id = var.masterFlavour
   security_groups = [sbercloud_networking_secgroup.sg_01.name]

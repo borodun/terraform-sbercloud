@@ -1,3 +1,6 @@
+#Prefix
+prefix = "ubuntu"
+
 #ECS
 workerNodesCount = 2
 workerFlavour = "s6.large.2"
@@ -5,11 +8,11 @@ masterFlavour = "s6.large.2"
 discSize = 50
 keyPair = "Your key pair"
 
-#VPC vars
+#VPC
 vpcName = "vpc-1"
 vpcCidr = "10.10.0.0/16"
 
-#Subnet vars
+#Subnet
 subnetName = "subnet-1"
 subnetCidr = "10.10.10.0/24"
 subnetGateway = "10.10.10.1"
@@ -18,11 +21,11 @@ secondaryDNS = "8.8.8.8"
 
 #NAT
 natName = "nat-1"
-backendLBPort = 9999
 
 #ELB
 elbName = "elb-1"
 listenerName = "listener-1"
+backendLBPort = 9999
 
 #SG
 sgName = "sg-1"

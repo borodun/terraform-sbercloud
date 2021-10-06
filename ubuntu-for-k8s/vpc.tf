@@ -23,16 +23,16 @@ variable "primaryDNS" {
 }
 
 variable "secondaryDNS" {
-  description = "IP of 2nd DNS"
+  description = "2nd DNS IP"
 }
 
 resource "sbercloud_vpc" "vpc_01" {
-  name = var.vpcName
+  name = "${var.prefix}-${var.vpcName}"
   cidr = var.vpcCidr
 }
 
 resource "sbercloud_vpc_subnet" "subnet_01" {
-  name = var.subnetName
+  name = "${var.prefix}-${var.subnetName}"
   cidr = var.subnetCidr
   gateway_ip = var.subnetGateway
 

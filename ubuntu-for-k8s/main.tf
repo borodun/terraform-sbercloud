@@ -1,3 +1,8 @@
+variable "prefix" {
+  description = "Project prefix"
+  sensitive = true
+}
+
 terraform {
   required_providers {
     sbercloud = {

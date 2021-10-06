@@ -104,7 +104,7 @@ locals {
 }
 
 resource "sbercloud_networking_secgroup" "sg_01" {
-  name = var.sgName
+  name = "${var.prefix}-${var.sgName}"
   description = "Security group with SSH, HTTP, HTTPS, Prometheus, Grafana, OpenFaaS"
 }
 

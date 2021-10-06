@@ -15,7 +15,7 @@ resource "sbercloud_vpc_eip" "elb_eip" {
     type = "5_bgp"
   }
   bandwidth {
-    name = "eip-for-${var.elbName}"
+    name = "${var.prefix}-eip-for-${var.elbName}"
     size = 5
     share_type = "PER"
     charge_mode = "bandwidth"
@@ -23,7 +23,7 @@ resource "sbercloud_vpc_eip" "elb_eip" {
 }
 
 resource "sbercloud_lb_loadbalancer" "elb_01" {
-  name = var.elbName
+  name = "${var.prefix}-${var.elbName}"
   vip_subnet_id = sbercloud_vpc_subnet.subnet_01.subnet_id
 }
 
