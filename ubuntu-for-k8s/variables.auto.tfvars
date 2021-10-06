@@ -1,5 +1,9 @@
-#Worker nodes count
+#ECS
 workerNodesCount = 2
+workerFlavour = "s6.large.2"
+masterFlavour = "s6.large.2"
+discSize = 50
+keyPair = "Your key pair"
 
 #VPC vars
 vpcName = "vpc-1"
@@ -22,12 +26,3 @@ listenerName = "listener-1"
 
 #SG
 sgName = "sg-1"
-
-#ECS
-workerFlavour = "s6.large.2"
-masterFlavour = "s6.large.2"
-discSize = 50
-keyPair = "KeyPair-Borodun"
-
-
-
