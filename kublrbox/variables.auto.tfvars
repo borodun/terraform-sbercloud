@@ -1,21 +1,19 @@
 #Prefix
-prefix = "ubuntu"
+prefix = "kublrbox"
 
 #ECS
-workerNodesCount = 2
-workerFlavour = "s6.large.2"
-masterFlavour = "s6.large.2"
-discSize = 50
+flavour = "s6.large.2"
+discSize = 20
 keyPair = "KeyPair-Borodun"
 
 #VPC
 vpcName = "vpc"
-vpcCidr = "10.10.0.0/16"
+vpcCidr = "10.12.0.0/16"
 
 #Subnet
 subnetName = "subnet"
-subnetCidr = "10.10.10.0/24"
-subnetGateway = "10.10.10.1"
+subnetCidr = "10.12.12.0/24"
+subnetGateway = "10.12.12.1"
 primaryDNS = "100.125.13.59"
 secondaryDNS = "8.8.8.8"
 

@@ -1,5 +1,5 @@
 #Prefix
-prefix = "ubuntu"
+prefix = "alt"
 
 #ECS
 workerNodesCount = 2
@@ -10,12 +10,12 @@ keyPair = "KeyPair-Borodun"
 
 #VPC
 vpcName = "vpc"
-vpcCidr = "10.10.0.0/16"
+vpcCidr = "10.11.0.0/16"
 
 #Subnet
 subnetName = "subnet"
-subnetCidr = "10.10.10.0/24"
-subnetGateway = "10.10.10.1"
+subnetCidr = "10.11.11.0/24"
+subnetGateway = "10.11.11.1"
 primaryDNS = "100.125.13.59"
 secondaryDNS = "8.8.8.8"
 
