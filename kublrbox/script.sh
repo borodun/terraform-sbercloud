@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#upgrade and install docker engine
+#install docker engine
 sudo apt update
 sudo apt upgrade -y
 sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release -y

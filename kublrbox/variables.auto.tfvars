@@ -23,7 +23,6 @@ natName = "nat"
 #ELB
 elbName = "elb"
 listenerName = "listener"
-backendLBPort = 9999
 
 #SG
 sgName = "sg"

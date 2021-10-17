@@ -19,4 +19,4 @@ $ terraform apply
 $ terraform destroy
 ```
 
-NOTE: Without _ELB_ you won't be able to connect to instance  because you need _VPC_ scenario in DNAT settings, but you can't do that in sbercloud terraform, because it chooses _Direct Connect_ by default. See [issue](https://github.com/sbercloud-terraform/terraform-provider-sbercloud/issues/74)
+NOTE: Without _Listener_ in ELB you won't be able to connect to instance because it won't enable _Direct connect_ for that VPC. To connect without Listener you need to choose _VPC_ scenario in DNAT rule settings, but you can't do that in sbercloud-terraform, because it chooses _Direct Connect_ by default with no way to change it. See [issue](https://github.com/sbercloud-terraform/terraform-provider-sbercloud/issues/74)
