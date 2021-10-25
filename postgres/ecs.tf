@@ -15,7 +15,7 @@ data "sbercloud_images_image" "ubuntu_image" {
   most_recent = true
 }
 
-resource "sbercloud_compute_instance" "kublrbox" {
+resource "sbercloud_compute_instance" "postgres" {
   name = "${var.prefix}-ecs"
   image_id = data.sbercloud_images_image.ubuntu_image.id
   flavor_id = var.flavour

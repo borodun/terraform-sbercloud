@@ -19,7 +19,7 @@ variable "keyPair" {
   description = "Name of the key pair"
 }
 
-data "sbercloud_images_image" "ubuntu_image" {
+data "sbercloud_images_image" "alt_image" {
   name = "Alt Server V 9.2"
   most_recent = true
 }
@@ -28,7 +28,7 @@ resource "sbercloud_compute_instance" "ecs_01" {
   count = var.workerNodesCount
 
   name = "${var.prefix}-ecs-worker-${count.index}"
-  image_id = data.sbercloud_images_image.ubuntu_image.id
+  image_id = data.sbercloud_images_image.alt_image.id
   flavor_id = var.workerFlavour
   security_groups = [sbercloud_networking_secgroup.sg_01.name]
   availability_zone = "ru-moscow-1a"
@@ -47,7 +47,7 @@ resource "sbercloud_compute_instance" "ecs_01" {
 
 resource "sbercloud_compute_instance" "ecs_master" {
   name = "${var.prefix}-ecs-master"
-  image_id = data.sbercloud_images_image.ubuntu_image.id
+  image_id = data.sbercloud_images_image.alt_image.id
   flavor_id = var.masterFlavour
   security_groups = [sbercloud_networking_secgroup.sg_01.name]
   availability_zone = "ru-moscow-1a"
