@@ -27,13 +27,7 @@ locals {
       protocol = "tcp",
       port = 9999,
       source = "0.0.0.0/0"
-    },
-    lb-http-rule = {
-      description = "Allow HTTP for load balancer",
-      protocol = "tcp",
-      port = 80,
-      source = "178.170.192.219/32"
-    },
+    }
     kube-api-rule = {
       description = "Allow kube-api",
       protocol = "tcp",
