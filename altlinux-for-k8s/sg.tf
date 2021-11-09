@@ -22,7 +22,7 @@ locals {
       port = 22,
       source = "0.0.0.0/0"
     },
-    http-rule = {
+    quarkus-rule = {
       description = "Allow port 8080",
       protocol = "tcp",
       port = 8080,
