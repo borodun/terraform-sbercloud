@@ -13,7 +13,10 @@ $ terraform init
 $ terraform validate
 $ terraform apply
 ```
-4. This will create 1 Ubuntu ecs and run postgres on it with default port 5432.
+4. This will create 1 Ubuntu ecs and run postgres on it with default port 5432. To access ecs use:
+```shell
+$ ssh -i your_key.pem root@nat_eip
+```
 5. Revert changes:
 ```shell
 $ terraform destroy
