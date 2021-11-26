@@ -1,22 +1,20 @@
 #Prefix
-prefix = "alt"
+prefix = "gitlab"
 
 #ECS
-image = "Alt Server V 9.2"
-workerNodesCount = 2
-workerFlavour = "s6.large.2"
-masterFlavour = "s6.large.2"
-discSize = 50
+image = "Ubuntu 20.04 server 64bit"
+flavour = "s6.xlarge.2"
+discSize = 20
 keyPair = "KeyPair-Borodun"
 
 #VPC
 vpcName = "vpc"
-vpcCidr = "10.11.0.0/16"
+vpcCidr = "10.15.0.0/16"
 
 #Subnet
 subnetName = "subnet"
-subnetCidr = "10.11.11.0/24"
-subnetGateway = "10.11.11.1"
+subnetCidr = "10.15.15.0/24"
+subnetGateway = "10.15.15.1"
 primaryDNS = "100.125.13.59"
 secondaryDNS = "8.8.8.8"
 

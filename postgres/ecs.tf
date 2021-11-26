@@ -10,14 +10,18 @@ variable "keyPair" {
   description = "Name of the key pair"
 }
 
-data "sbercloud_images_image" "ubuntu_image" {
-  name = "Ubuntu 20.04 server 64bit"
+variable "image" {
+  description = "Name of the image"
+}
+
+data "sbercloud_images_image" "ecs_image" {
+  name = var.image
   most_recent = true
 }
 
 resource "sbercloud_compute_instance" "postgres" {
   name = "${var.prefix}-ecs"
-  image_id = data.sbercloud_images_image.ubuntu_image.id
+  image_id = data.sbercloud_images_image.ecs_image.id
   flavor_id = var.flavour
   security_groups = [sbercloud_networking_secgroup.sg_01.name]
   availability_zone = "ru-moscow-1a"

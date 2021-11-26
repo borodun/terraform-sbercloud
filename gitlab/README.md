@@ -13,7 +13,7 @@ $ terraform init
 $ terraform validate
 $ terraform apply
 ```
-4. This will create 1 Ubuntu ecs and run kublrbox on it. Use _nat-eip:9080_ to access kublrbox in your browser. Default credentials: admin, kublrbox.
+4. This will create 1 Ubuntu ecs and run gitlab on it. Use _nat-eip_ to access gitlab in your browser. Default credentials: root, sbercloud.
 5. Revert changes:
 ```shell
 $ terraform destroy

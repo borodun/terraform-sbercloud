@@ -2,6 +2,7 @@
 prefix = "ubuntu"
 
 #ECS
+image = "Ubuntu 20.04 server 64bit"
 workerNodesCount = 2
 workerFlavour = "s6.large.2"
 masterFlavour = "s6.large.2"

@@ -19,7 +19,7 @@ data "sbercloud_images_image" "ecs_image" {
   most_recent = true
 }
 
-resource "sbercloud_compute_instance" "kublrbox" {
+resource "sbercloud_compute_instance" "gitlab" {
   name = "${var.prefix}-ecs"
   image_id = data.sbercloud_images_image.ecs_image.id
   flavor_id = var.flavour

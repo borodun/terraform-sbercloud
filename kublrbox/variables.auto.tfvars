@@ -2,6 +2,7 @@
 prefix = "kublrbox"
 
 #ECS
+image = "Ubuntu 20.04 server 64bit"
 flavour = "s6.large.2"
 discSize = 20
 keyPair = "KeyPair-Borodun"
