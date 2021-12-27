@@ -27,7 +27,7 @@ locals {
 
 resource "sbercloud_networking_secgroup" "sg_01" {
   name = "${var.prefix}-${var.sgName}"
-  description = "Security group with SSH, HTTP, HTTPS, Prometheus, Grafana, OpenFaaS"
+  description = "Security group for gitlab"
 }
 
 resource "sbercloud_networking_secgroup_rule" "sg_rule_01" {

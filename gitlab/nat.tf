@@ -33,8 +33,8 @@ resource "sbercloud_nat_dnat_rule" "dnat_01" {
   nat_gateway_id = sbercloud_nat_gateway.nat_01.id
   private_ip = sbercloud_compute_instance.gitlab.access_ip_v4
   protocol = "tcp"
-  internal_service_port = 22
-  external_service_port = 22
+  internal_service_port = local.rules.ssh-rule.port
+  external_service_port = local.rules.ssh-rule.port
 }
 
 resource "sbercloud_nat_dnat_rule" "dnat_02" {
@@ -42,8 +42,8 @@ resource "sbercloud_nat_dnat_rule" "dnat_02" {
   nat_gateway_id = sbercloud_nat_gateway.nat_01.id
   private_ip = sbercloud_compute_instance.gitlab.access_ip_v4
   protocol = "tcp"
-  internal_service_port = 80
-  external_service_port = 80
+  internal_service_port = local.rules.http-rule.port
+  external_service_port = local.rules.http-rule.port
 }
 
 resource "sbercloud_nat_dnat_rule" "dnat_03" {
@@ -51,6 +51,6 @@ resource "sbercloud_nat_dnat_rule" "dnat_03" {
   nat_gateway_id = sbercloud_nat_gateway.nat_01.id
   private_ip = sbercloud_compute_instance.gitlab.access_ip_v4
   protocol = "tcp"
-  internal_service_port = 443
-  external_service_port = 443
+  internal_service_port = local.rules.https-rule.port
+  external_service_port = local.rules.https-rule.port
 }

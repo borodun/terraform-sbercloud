@@ -33,8 +33,8 @@ resource "sbercloud_nat_dnat_rule" "dnat_01" {
   nat_gateway_id = sbercloud_nat_gateway.nat_01.id
   private_ip = sbercloud_compute_instance.postgres.access_ip_v4
   protocol = "tcp"
-  internal_service_port = 22
-  external_service_port = 22
+  internal_service_port = local.rules.ssh-rule.port
+  external_service_port = local.rules.ssh-rule.port
 }
 
 resource "sbercloud_nat_dnat_rule" "dnat_02" {
@@ -42,6 +42,6 @@ resource "sbercloud_nat_dnat_rule" "dnat_02" {
   nat_gateway_id = sbercloud_nat_gateway.nat_01.id
   private_ip = sbercloud_compute_instance.postgres.access_ip_v4
   protocol = "tcp"
-  internal_service_port = 5432
-  external_service_port = 5432
+  internal_service_port = local.rules.postgres-rule.port
+  external_service_port = local.rules.postgres-rule.port
 }
