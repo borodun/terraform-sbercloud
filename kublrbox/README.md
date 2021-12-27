@@ -21,7 +21,7 @@ $ terraform validate
 $ terraform apply
 ```
 
-4. This will create 1 Ubuntu ecs and run kublrbox on it. Use _nat-eip:9080_ to access kublrbox in your browser. Default
+4. By default, this will create 1 Ubuntu ecs and run kublrbox on it. Use _nat-eip:9080_ to access kublrbox in your browser. Default
    credentials: admin, kublrbox. To access ecs use
 
 ```shell

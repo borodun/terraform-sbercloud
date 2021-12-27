@@ -1,5 +1,5 @@
 # Info
-Collection of terraform scripts I used for SberCloud. They are easily configured through **variables.auto.tfvars** file. 
+Collection of terraform scripts I used on SberCloud. They are easily configured through **variables.auto.tfvars** file. 
 Also, every one of them has its own _script.sh_ that will run upon ecs start up.
 
 ## Links

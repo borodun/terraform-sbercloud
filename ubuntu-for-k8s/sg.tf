@@ -21,7 +21,7 @@ locals {
       protocol = "tcp",
       port = 22,
       source = "0.0.0.0/0"
-    }
+    },
     kube-api-rule = {
       description = "Allow kube-api",
       protocol = "tcp",
