@@ -31,7 +31,7 @@ resource "sbercloud_nat_snat_rule" "snat_01" {
 resource "sbercloud_nat_dnat_rule" "dnat_01" {
   floating_ip_id = sbercloud_vpc_eip.nat_eip.id
   nat_gateway_id = sbercloud_nat_gateway.nat_01.id
-  private_ip = sbercloud_compute_instance.ecs_master.access_ip_v4
+  private_ip = sbercloud_compute_instance.ecs_ansible_deployment.access_ip_v4
   protocol = "tcp"
   internal_service_port = local.rules.ssh-rule.port
   external_service_port = local.rules.ssh-rule.port
@@ -40,8 +40,17 @@ resource "sbercloud_nat_dnat_rule" "dnat_01" {
 resource "sbercloud_nat_dnat_rule" "dnat_02" {
   floating_ip_id = sbercloud_vpc_eip.nat_eip.id
   nat_gateway_id = sbercloud_nat_gateway.nat_01.id
-  private_ip = sbercloud_compute_instance.ecs_master.access_ip_v4
+  private_ip = sbercloud_compute_instance.ecs_ansible_deployment.access_ip_v4
   protocol = "tcp"
-  internal_service_port = local.rules.kube-api-rule.port
-  external_service_port = local.rules.kube-api-rule.port
+  internal_service_port = local.rules.https-rule.port
+  external_service_port = local.rules.https-rule.port
+}
+
+resource "sbercloud_nat_dnat_rule" "dnat_03" {
+  floating_ip_id = sbercloud_vpc_eip.nat_eip.id
+  nat_gateway_id = sbercloud_nat_gateway.nat_01.id
+  private_ip = sbercloud_compute_instance.ecs_ansible_deployment.access_ip_v4
+  protocol = "tcp"
+  internal_service_port = local.rules.http-rule.port
+  external_service_port = local.rules.http-rule.port
 }

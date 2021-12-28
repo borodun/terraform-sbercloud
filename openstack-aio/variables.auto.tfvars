@@ -3,10 +3,10 @@ prefix = "openstack"
 
 #ECS
 image = "Ubuntu 20.04 server 64bit"
-workerNodesCount = 2
+workerNodesCount = 0
 workerFlavour = "s6.xlarge.2"
-masterFlavour = "s6.xlarge.4"
-discSize = 50
+masterFlavour = "s6.2xlarge.2"
+discSize = 100
 keyPair = "KeyPair-Borodun"
 
 #VPC

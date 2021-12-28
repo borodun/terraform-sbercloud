@@ -13,7 +13,7 @@ $ export SBC_PROJECT_NAME="project-name"
 $ export SBC_REGION_NAME="ru-moscow-1"
 ```
 
-3. Change **variables.auto.tfvars** and **_script.sh_** according to your needs.
+3. Change **variables.auto.tfvars** and **_script.sh_** according to your needs. Then do:
 
 ```shell
 $ terraform init
@@ -21,15 +21,24 @@ $ terraform validate
 $ terraform apply
 ```
 
-4. By default, this will create 3 Ubuntu ecs(1 master and 2 workers) and prepare them for OpenStack. To access master
-   use
+4. By default, this will create 1 Ubuntu ecs and run OpenStack AIO on it. Whole process will take about 2 hours. To
+   access node use
 
 ```shell
 $ ssh -i your_key.pem root@nat_eip
 ```
 
-5. To access workers you need to copy _your_key.pem_ to master and connect to workers the same way.
-6. Revert changes:
+5. Retrieve admin password:
+
+```shell
+$ cat /etc/openstack_deploy/user_secrets.yml | grep keystone_auth_admin_password
+```
+
+7. To access OpenStack in browser use _https://nat-eip_ Use admin as login
+8. For more info
+   read [OpenStack-Ansible Deployment Guide](https://docs.openstack.org/project-deploy-guide/openstack-ansible/xena/)
+   and [Quickstart: AIO](https://docs.openstack.org/openstack-ansible/xena/user/aio/quickstart.html)
+9. Revert changes:
 
 ```shell
 $ terraform destroy

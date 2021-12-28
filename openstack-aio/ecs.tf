@@ -31,16 +31,16 @@ data "sbercloud_images_image" "ecs_image" {
 resource "sbercloud_compute_instance" "ecs_workers" {
   count = var.workerNodesCount
 
-  name = "${var.prefix}-ecs-worker-${count.index}"
+  name = "${var.prefix}-target-host-${count.index}"
   image_id = data.sbercloud_images_image.ecs_image.id
   flavor_id = var.workerFlavour
   security_groups = [sbercloud_networking_secgroup.sg_01.name]
   availability_zone = "ru-moscow-1a"
   key_pair = var.keyPair
 
-  user_data = file("./script.sh")
+  user_data = file("./script-target.sh")
 
-  system_disk_type = "SAS"
+  system_disk_type = "SSD"
   system_disk_size = var.discSize
 
 
@@ -49,17 +49,17 @@ resource "sbercloud_compute_instance" "ecs_workers" {
   }
 }
 
-resource "sbercloud_compute_instance" "ecs_master" {
-  name = "${var.prefix}-ecs-master"
+resource "sbercloud_compute_instance" "ecs_ansible_deployment" {
+  name = "${var.prefix}-ansible-deployment"
   image_id = data.sbercloud_images_image.ecs_image.id
   flavor_id = var.masterFlavour
   security_groups = [sbercloud_networking_secgroup.sg_01.name]
   availability_zone = "ru-moscow-1a"
   key_pair = var.keyPair
 
-  user_data = file("./script.sh")
+  user_data = file("./script-deployment.sh")
 
-  system_disk_type = "SAS"
+  system_disk_type = "SSD"
   system_disk_size = var.discSize
 
 
