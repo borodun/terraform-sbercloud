@@ -13,7 +13,7 @@ $ export SBC_PROJECT_NAME="project-name"
 $ export SBC_REGION_NAME="ru-moscow-1"
 ```
 
-3. Change **variables.auto.tfvars** and **_script.sh_** according to your needs.
+3. Change **variables.auto.tfvars** and **_script.sh_** according to your needs. Then do:
 
 ```shell
 $ terraform init
