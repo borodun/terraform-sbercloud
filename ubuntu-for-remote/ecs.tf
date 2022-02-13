@@ -20,7 +20,7 @@ data "sbercloud_images_image" "ecs_image" {
 }
 
 resource "sbercloud_compute_instance" "ecs_master" {
-  name = "${var.prefix}-ecs-master"
+  name = var.prefix
   image_id = data.sbercloud_images_image.ecs_image.id
   flavor_id = var.masterFlavour
   security_groups = [sbercloud_networking_secgroup.sg_01.name]
