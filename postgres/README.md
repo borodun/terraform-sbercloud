@@ -27,7 +27,10 @@ $ terraform apply
 $ ssh -i your_key.pem root@nat_eip
 ```
 
-5. Revert changes:
+5. Follow [this](https://blog.logrocket.com/setting-up-a-remote-postgres-database-server-on-ubuntu-18-04/) to allow
+   remote access to postgres.
+
+6. Revert changes:
 
 ```shell
 $ terraform destroy
