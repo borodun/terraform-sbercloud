@@ -22,16 +22,10 @@ locals {
       port = 22,
       source = "0.0.0.0/0"
     },
-    kube-api-rule = {
-      description = "Allow kube-api",
+    xdrp-rule = {
+      description = "Allow xdrp",
       protocol = "tcp",
-      port = 6443,
-      source = "0.0.0.0/0"
-    },
-    kublr-agent-rule = {
-      description = "Allow kublr agent",
-      protocol = "tcp",
-      port = 11251,
+      port = 3389,
       source = "0.0.0.0/0"
     }
   }

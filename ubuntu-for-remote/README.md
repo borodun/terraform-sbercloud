@@ -27,7 +27,9 @@ $ terraform apply
 $ ssh -i your_key.pem root@nat_eip
 ```
 
-6. Revert changes:
+6. Follow [this](https://bytexd.com/install-chrome-remote-desktop-headless/) to access remote desktop.
+
+7. Revert changes:
 
 ```shell
 $ terraform destroy
