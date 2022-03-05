@@ -1,5 +1,5 @@
 #Prefix
-prefix = "alt"
+prefix = "alt-k8s"
 
 #ECS
 image = "Alt Server V 9.2"

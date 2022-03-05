@@ -1,12 +1,12 @@
 #Prefix
-prefix = "ubuntu"
+prefix = "ubuntu-k8s"
 
 #ECS
 image = "Ubuntu 20.04 server 64bit"
 workerNodesCount = 2
-workerFlavour = "s6.large.2"
-masterFlavour = "s6.large.2"
-discSize = 50
+workerFlavour = "s6.xlarge.2"
+masterFlavour = "s6.xlarge.2"
+discSize = 100
 keyPair = "KeyPair-Borodun"
 
 #VPC

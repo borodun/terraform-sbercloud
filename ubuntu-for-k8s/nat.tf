@@ -45,3 +45,39 @@ resource "sbercloud_nat_dnat_rule" "dnat_02" {
   internal_service_port = local.rules.kube-api-rule.port
   external_service_port = local.rules.kube-api-rule.port
 }
+
+resource "sbercloud_nat_dnat_rule" "dnat_03" {
+  floating_ip_id = sbercloud_vpc_eip.nat_eip.id
+  nat_gateway_id = sbercloud_nat_gateway.nat_01.id
+  private_ip = sbercloud_compute_instance.ecs_master.access_ip_v4
+  protocol = "tcp"
+  internal_service_port = local.rules.http-rule.port
+  external_service_port = local.rules.http-rule.port
+}
+
+resource "sbercloud_nat_dnat_rule" "dnat_04" {
+  floating_ip_id = sbercloud_vpc_eip.nat_eip.id
+  nat_gateway_id = sbercloud_nat_gateway.nat_01.id
+  private_ip = sbercloud_compute_instance.ecs_master.access_ip_v4
+  protocol = "tcp"
+  internal_service_port = local.rules.https-rule.port
+  external_service_port = local.rules.https-rule.port
+}
+
+resource "sbercloud_nat_dnat_rule" "dnat_05" {
+  floating_ip_id = sbercloud_vpc_eip.nat_eip.id
+  nat_gateway_id = sbercloud_nat_gateway.nat_01.id
+  private_ip = sbercloud_compute_instance.ecs_master.access_ip_v4
+  protocol = "tcp"
+  internal_service_port = local.rules.web1-rule.port
+  external_service_port = local.rules.web1-rule.port
+}
+
+resource "sbercloud_nat_dnat_rule" "dnat_06" {
+  floating_ip_id = sbercloud_vpc_eip.nat_eip.id
+  nat_gateway_id = sbercloud_nat_gateway.nat_01.id
+  private_ip = sbercloud_compute_instance.ecs_master.access_ip_v4
+  protocol = "tcp"
+  internal_service_port = local.rules.web2-rule.port
+  external_service_port = local.rules.web2-rule.port
+}

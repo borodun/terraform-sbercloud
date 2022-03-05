@@ -33,6 +33,60 @@ locals {
       protocol = "tcp",
       port = 11251,
       source = "0.0.0.0/0"
+    },
+    k0sapi-rule = {
+      description = "Allow k0sAPI",
+      protocol = "tcp",
+      port = 9443,
+      source = "0.0.0.0/0"
+    },
+    konnectivity-admin-rule = {
+      description = "Allow konnectivity admin",
+      protocol = "tcp",
+      port = 8133,
+      source = "0.0.0.0/0"
+    },
+    konnectivity-agent-rule = {
+      description = "Allow konnectivity agent",
+      protocol    = "tcp",
+      port        = 8132,
+      source      = "0.0.0.0/0"
+    },
+    etcd-rule = {
+      description = "etcd peers",
+      protocol = "tcp",
+      port = 2380,
+      source = "0.0.0.0/0"
+    },
+    kube-router-rule = {
+      description = "kube-router",
+      protocol = "tcp",
+      port = 179,
+      source = "0.0.0.0/0"
+    },
+    calico-rule = {
+      description = "calico",
+      protocol = "udp",
+      port = 4789,
+      source = "0.0.0.0/0"
+    },
+    kubelet-rule = {
+      description = "kubelet",
+      protocol = "tcp",
+      port = 10250,
+      source = "0.0.0.0/0"
+    },
+    web1-rule = {
+      description = "Allow port 8080",
+      protocol = "tcp",
+      port = 8080,
+      source = "0.0.0.0/0"
+    },
+    web2-rule = {
+      description = "Allow port 8181",
+      protocol = "tcp",
+      port = 8181,
+      source = "0.0.0.0/0"
     }
   }
 }

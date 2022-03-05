@@ -1,10 +1,10 @@
 #Prefix
-prefix = "gitlab"
+prefix = "gitlab-ob"
 
 #ECS
 image = "Ubuntu 20.04 server 64bit"
 flavour = "s6.xlarge.2"
-discSize = 20
+discSize = 50
 keyPair = "KeyPair-Borodun"
 
 #VPC
