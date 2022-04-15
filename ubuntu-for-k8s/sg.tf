@@ -87,6 +87,18 @@ locals {
       protocol = "tcp",
       port = 8181,
       source = "0.0.0.0/0"
+    },
+    nodeport1-rule = {
+      description = "Allow node port 1",
+      protocol = "tcp",
+      port = 31759,
+      source = "0.0.0.0/0"
+    },
+    nodeport2-rule = {
+      description = "Allow node port 1",
+      protocol = "tcp",
+      port = 31890,
+      source = "0.0.0.0/0"
     }
   }
 }

@@ -51,7 +51,7 @@ resource "sbercloud_nat_dnat_rule" "dnat_03" {
   nat_gateway_id = sbercloud_nat_gateway.nat_01.id
   private_ip = sbercloud_compute_instance.ecs_master.access_ip_v4
   protocol = "tcp"
-  internal_service_port = local.rules.http-rule.port
+  internal_service_port = local.rules.nodeport1-rule.port
   external_service_port = local.rules.http-rule.port
 }
 
@@ -60,7 +60,7 @@ resource "sbercloud_nat_dnat_rule" "dnat_04" {
   nat_gateway_id = sbercloud_nat_gateway.nat_01.id
   private_ip = sbercloud_compute_instance.ecs_master.access_ip_v4
   protocol = "tcp"
-  internal_service_port = local.rules.https-rule.port
+  internal_service_port = local.rules.nodeport2-rule.port
   external_service_port = local.rules.https-rule.port
 }
 
