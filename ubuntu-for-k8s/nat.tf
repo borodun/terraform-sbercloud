@@ -81,3 +81,12 @@ resource "sbercloud_nat_dnat_rule" "dnat_06" {
   internal_service_port = local.rules.web2-rule.port
   external_service_port = local.rules.web2-rule.port
 }
+
+resource "sbercloud_nat_dnat_rule" "dnat_07" {
+  floating_ip_id = sbercloud_vpc_eip.nat_eip.id
+  nat_gateway_id = sbercloud_nat_gateway.nat_01.id
+  private_ip = sbercloud_compute_instance.ecs_master.access_ip_v4
+  protocol = "tcp"
+  internal_service_port = local.rules.shell-np-rule.port
+  external_service_port = local.rules.shell-np-rule.port
+}

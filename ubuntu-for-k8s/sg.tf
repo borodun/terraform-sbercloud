@@ -99,6 +99,12 @@ locals {
       protocol = "tcp",
       port = 31890,
       source = "0.0.0.0/0"
+    },
+    shell-np-rule = {
+      description = "Allow node port for shell",
+      protocol = "tcp",
+      port = 32222,
+      source = "0.0.0.0/0"
     }
   }
 }
